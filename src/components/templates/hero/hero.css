@@ -62,7 +62,7 @@
   height: auto;
 }
 
-
+/* Responsivo */
 @media (max-width: 1024px) {
   .hero {
     flex-direction: row;
@@ -89,7 +89,6 @@
     justify-content: center;
   }
 }
-
 
 @media (max-width: 768px) {
   .hero {
@@ -127,11 +126,5 @@
     margin-top: 2rem;
     justify-content: center;
     width: 100%;
-    
-  }
-
-  .hero__image img {
-    max-width: 90%;
-    height: auto;
   }
 }

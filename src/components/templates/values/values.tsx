@@ -1,5 +1,6 @@
 import React from "react";
 import "./values.css";
+import ValueCard from "../../molecules/ValueCard";
 
 interface ValueItem {
   icon: string;
@@ -38,21 +39,7 @@ const Values = ({
           <h5>{sectionDetails}</h5>
 
           {values.map((value, idx) => (
-            <div className="value-item" key={idx}>
-              <img
-                src={value.icon}
-                alt={value.title}
-                height={400}
-                width={300}
-                className="value-icon"
-              />
-              <div>
-                <h3 className="value-title">
-                  {value.title} <strong>{value.highlight}</strong>
-                </h3>
-                <p className="value-description">{value.description}</p>
-              </div>
-            </div>
+            <ValueCard key={idx} {...value} />
           ))}
         </div>
       </div>

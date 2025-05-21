@@ -1,5 +1,6 @@
 import React from "react";
 import "./Hero.css";
+import Button from "../../atoms/button.tsx";
 
 interface ButtonProps {
   label: string;
@@ -20,9 +21,11 @@ const Hero = ({ title, heroText, button, imageSrc, imageAlt }: HeroProps) => {
       <div className="hero__content">
         <h2 className="hero__title">{title}</h2>
         <p className="hero__text">{heroText}</p>
-        <button className="hero__button" onClick={button.onClick}>
-          {button.label}
-        </button>
+        <Button
+          className="hero__button"
+          onClick={button.onClick}
+          label={button.label}
+        />
       </div>
       <div className="hero__image">
         <img src={imageSrc} alt={imageAlt || "Imagen decorativa"} />
