@@ -3,13 +3,10 @@
   background-color: white;
 }
 
-.team-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.team-header {
-  margin-bottom: 40px;
+.team-header-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .team-title {
@@ -32,12 +29,6 @@
 .highlight-green {
   color: #22c55e;
   font-weight: 600;
-}
-
-.team-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1fr;
 }
 
 .team-card {
@@ -64,32 +55,58 @@
   font-size: 14px;
 }
 
-@media (min-width: 640px) {
-  .team-title {
-    font-size: 32px;
-  }
-
-  .team-subtitle {
-    font-size: 18px;
-  }
-
-  .team-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .team-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.team-grid {
+  display: grid;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 1024px) {
   .team-grid {
     grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+  }
+
+  .team-header-block {
+    grid-column: span 1;
+  }
+
+  .team-card {
+    grid-column: span 1;
   }
 
   .team-title {
     font-size: 36px;
   }
+
+  .team-subtitle {
+    font-size: 18px;
+  }
+}
+
+.swiper-custom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  background-color: #e5e5e5;
+  color: #333;
+  border: none;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: #ccc;
 }

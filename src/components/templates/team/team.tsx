@@ -21,7 +21,7 @@ const Team: React.FC<TeamProps> = ({ members }) => {
 
   useEffect(() => {
     const checkScreen = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024);
     };
     checkScreen();
     window.addEventListener("resize", checkScreen);
@@ -30,24 +30,27 @@ const Team: React.FC<TeamProps> = ({ members }) => {
 
   return (
     <section className="team-section">
-      <div className="team-container">
-        <div className="team-header">
-          <h2 className="team-title">
-            Así es <br />
-            <span className="team-highlight">nuestro equipo</span>
-          </h2>
-          <p className="team-subtitle">
-            Más de 800 personas con un propósito en común:{" "}
-            <span className="highlight-green">Hacerlo posible.</span>
-          </p>
-        </div>
+      {isMobile ? (
+        <div className="team-mobile">
+          <div className="team-header-block">
+            <h2 className="team-title">
+              Así es <br />
+              <span className="team-highlight">nuestro equipo</span>
+            </h2>
+            <p className="team-subtitle">
+              Más de 800 personas con un propósito en común:{" "}
+              <span className="highlight-green">Hacerlo posible.</span>
+            </p>
+          </div>
 
-        {isMobile ? (
           <Swiper
             modules={[Navigation]}
             spaceBetween={20}
             slidesPerView={1}
-            navigation
+            navigation={{
+              nextEl: ".swiper-button-next-custom",
+              prevEl: ".swiper-button-prev-custom",
+            }}
             className="team-swiper"
           >
             {members.map((member) => (
@@ -64,22 +67,38 @@ const Team: React.FC<TeamProps> = ({ members }) => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : (
-          <div className="team-grid">
-            {members.map((member) => (
-              <div key={member.id} className="team-card">
-                <img
-                  src={member.photoUrl}
-                  alt={member.name}
-                  className="team-image"
-                />
-                <h3 className="team-name">{member.name}</h3>
-                <p className="team-role">{member.role}</p>
-              </div>
-            ))}
+
+          <div className="swiper-custom-buttons">
+            <button className="swiper-button-prev-custom">←</button>
+            <button className="swiper-button-next-custom">→</button>
           </div>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="team-grid">
+          <div className="team-header-block">
+            <h2 className="team-title">
+              Así es <br />
+              <span className="team-highlight">nuestro equipo</span>
+            </h2>
+            <p className="team-subtitle">
+              Más de 800 personas con un propósito en común:{" "}
+              <span className="highlight-green">Hacerlo posible.</span>
+            </p>
+          </div>
+
+          {members.map((member) => (
+            <div key={member.id} className="team-card">
+              <img
+                src={member.photoUrl}
+                alt={member.name}
+                className="team-image"
+              />
+              <h3 className="team-name">{member.name}</h3>
+              <p className="team-role">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      )}
     </section>
   );
 };

@@ -5,8 +5,6 @@ import Values from './components/templates/values/values.tsx';
 import Testimonial from './components/templates/testimonial/Testimonial.tsx';
 import Team from './components/templates/team/team.tsx';
 
-
-
 import bannerImg from './images/Banner.png';
 import fundadorImg from './images/fundadorSistecredito.png';
 import valuesImg from './images/valuesPhone.png';
@@ -14,9 +12,15 @@ import icon1 from './images/icon1.png';
 import icon2 from './images/icon2.png';
 import icon3 from './images/icon3.png';
 
+import alvaroImg from './images/alvaro.png';
+import emilioImg from './images/emilio.png';
+import anaImg from './images/ana.png';
+import julietImg from './images/juliet.png';
+import doraImg from './images/dora.png';
+import isabelImg from './images/isabel.png';
+import ricardoImg from './images/ricardo.png';
 
 import './App.css';
-
 
 function App() {
   const [count, setCount] = useState(0);
@@ -77,58 +81,57 @@ function App() {
         />
 
         <Testimonial
-          
           quote="Yo tengo que ser capaz de sistematizar el crédito y de paso liberar al comerciante de esa administración porque para ellos no es el core del negocio..."
           author="Álvaro Villegas Londoño"
           role="Gerente General de Sistecrédito."
         />
 
-<Team
-      members={[
-        {
-          id: "1",
-          name: "Álvaro Villegas Londoño",
-          role: "Gerente General",
-          photoUrl: "./images/alvaro.png",
-        },
-        {
-          id: "2",
-          name: "Emilio Villegas",
-          role: "Vicepresidente de Estrategia",
-          photoUrl: "./images/emilio.png",
-        },
-        {
-          id: "3",
-          name: "Ana María Pérez Bustamante",
-          role: "Vicepresidente Administrativa",
-          photoUrl: "./images/anamaria.png",
-        },
-        {
-          id: "4",
-          name: "Juliet Natalia Flórez",
-          role: "Vicepresidente de Operaciones",
-          photoUrl: "./images/juliet.png",
-        },
-        {
-          id: "5",
-          name: "Dora Luz Mejía",
-          role: "Vicepresidente de Servicios Corporativos",
-          photoUrl: "./images/dora.png",
-        },
-        {
-          id: "6",
-          name: "Isabel Cristina Mejía",
-          role: "Vicepresidente Comercial",
-          photoUrl: "./images/isabel.png",
-        },
-        {
-          id: "7",
-          name: "Ricardo Villegas",
-          role: "Consultor permanente",
-          photoUrl: "./images/ricardo.png",
-        },
-      ]}
-    />
+        <Team
+          members={[
+            {
+              id: "1",
+              name: "Álvaro Villegas Londoño",
+              role: "Gerente General",
+              photoUrl: alvaroImg,
+            },
+            {
+              id: "2",
+              name: "Emilio Villegas",
+              role: "Vicepresidente de Estrategia",
+              photoUrl: emilioImg,
+            },
+            {
+              id: "3",
+              name: "Ana María Pérez Bustamante",
+              role: "Vicepresidente Administrativa",
+              photoUrl: anaImg,
+            },
+            {
+              id: "4",
+              name: "Juliet Natalia Flórez",
+              role: "Vicepresidente de Operaciones",
+              photoUrl: julietImg,
+            },
+            {
+              id: "5",
+              name: "Dora Luz Mejía",
+              role: "Vicepresidente de Servicios Corporativos",
+              photoUrl: doraImg,
+            },
+            {
+              id: "6",
+              name: "Isabel Cristina Mejía",
+              role: "Vicepresidente Comercial",
+              photoUrl: isabelImg,
+            },
+            {
+              id: "7",
+              name: "Ricardo Villegas",
+              role: "Consultor permanente",
+              photoUrl: ricardoImg,
+            },
+          ]}
+        />
       </div>
     </>
   );
