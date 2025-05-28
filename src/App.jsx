@@ -77,7 +77,7 @@ function App() {
         />
 
         <Testimonial
-          videoSrc={videoTest}
+          
           quote="Yo tengo que ser capaz de sistematizar el crédito y de paso liberar al comerciante de esa administración porque para ellos no es el core del negocio..."
           author="Álvaro Villegas Londoño"
           role="Gerente General de Sistecrédito."
