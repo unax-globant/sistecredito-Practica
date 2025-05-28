@@ -1,61 +1,87 @@
-import React from "react";
-import Slider from "react-slick";
-import "./team.css";
+import React, { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "./Team.css";
 
-interface Member {
+export interface TeamMember {
+  id: string;
   name: string;
-  title: string;
-  image: string;
+  role: string;
+  photoUrl: string;
 }
 
 interface TeamProps {
-  members: Member[];
+  members: TeamMember[];
 }
 
-export default function Team({ members }: TeamProps) {
-  const settings = {
-    dots: false,
-    arrows: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
+const Team: React.FC<TeamProps> = ({ members }) => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreen = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkScreen();
+    window.addEventListener("resize", checkScreen);
+    return () => window.removeEventListener("resize", checkScreen);
+  }, []);
 
   return (
     <section className="team-section">
-      <div className="team-header">
-        <h2>
-          Así es <br />
-          <strong>nuestro equipo</strong>
-        </h2>
-        <p>
-          Más de 800 personas con un propósito en común:{" "}
-          <span className="green">Hacerlo posible.</span>
-        </p>
-      </div>
+      <div className="team-container">
+        <div className="team-header">
+          <h2 className="team-title">
+            Así es <br />
+            <span className="team-highlight">nuestro equipo</span>
+          </h2>
+          <p className="team-subtitle">
+            Más de 800 personas con un propósito en común:{" "}
+            <span className="highlight-green">Hacerlo posible.</span>
+          </p>
+        </div>
 
-      <div className="team-grid desktop">
-        {members.map((member, idx) => (
-          <div className="team-member" key={idx}>
-            <img src={member.image} alt={member.name} />
-            <h4>{member.name}</h4>
-            <p>{member.title}</p>
+        {isMobile ? (
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            navigation
+            className="team-swiper"
+          >
+            {members.map((member) => (
+              <SwiperSlide key={member.id}>
+                <div className="team-card">
+                  <img
+                    src={member.photoUrl}
+                    alt={member.name}
+                    className="team-image"
+                  />
+                  <h3 className="team-name">{member.name}</h3>
+                  <p className="team-role">{member.role}</p>
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="team-grid">
+            {members.map((member) => (
+              <div key={member.id} className="team-card">
+                <img
+                  src={member.photoUrl}
+                  alt={member.name}
+                  className="team-image"
+                />
+                <h3 className="team-name">{member.name}</h3>
+                <p className="team-role">{member.role}</p>
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
-
-      <div className="team-slider mobile">
-        <Slider {...settings}>
-          {members.map((member, idx) => (
-            <div className="team-member" key={idx}>
-              <img src={member.image} alt={member.name} />
-              <h4>{member.name}</h4>
-              <p>{member.title}</p>
-            </div>
-          ))}
-        </Slider>
+        )}
       </div>
     </section>
   );
-}
+};
+
+export default Team;

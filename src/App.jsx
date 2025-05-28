@@ -5,13 +5,7 @@ import Values from './components/templates/values/values.tsx';
 import Testimonial from './components/templates/testimonial/Testimonial.tsx';
 import Team from './components/templates/team/team.tsx';
 
-import alvaroImg from './images/alvaro.png';
-import emilioImg from './images/emilio.png';
-import anaImg from './images/ana.png';
-import julietImg from './images/juliet.png';
-import doraImg from './images/dora.png';
-import isabelImg from './images/isabel.png';
-import ricardoImg from './images/ricardo.png';
+
 
 import bannerImg from './images/Banner.png';
 import fundadorImg from './images/fundadorSistecredito.png';
@@ -22,8 +16,7 @@ import icon3 from './images/icon3.png';
 import videoTest from './videos/videoTest.mp4';
 
 import './App.css';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -90,45 +83,52 @@ function App() {
           role="Gerente General de Sistecrédito."
         />
 
-        <Team
-          members={[
-            {
-              name: "Álvaro Villegas Londoño",
-              title: "Gerente General",
-              image: alvaroImg,
-            },
-            {
-              name: "Emilio Villegas",
-              title: "Vicepresidente de Estrategia",
-              image: emilioImg,
-            },
-            {
-              name: "Ana María Pérez Bustamante",
-              title: "Vicepresidente Administrativa",
-              image: anaImg,
-            },
-            {
-              name: "Juliet Natalia Flórez",
-              title: "Vicepresidente de Operaciones",
-              image: julietImg,
-            },
-            {
-              name: "Dora Luz Mejía",
-              title: "Vicepresidente de Servicios Corporativos",
-              image: doraImg,
-            },
-            {
-              name: "Isabel Cristina Mejía",
-              title: "Vicepresidente Comercial",
-              image: isabelImg,
-            },
-            {
-              name: "Ricardo Villegas",
-              title: "Consultor permanente",
-              image: ricardoImg,
-            },
-          ]}
-        />
+<Team
+      members={[
+        {
+          id: "1",
+          name: "Álvaro Villegas Londoño",
+          role: "Gerente General",
+          photoUrl: "./images/alvaro.png",
+        },
+        {
+          id: "2",
+          name: "Emilio Villegas",
+          role: "Vicepresidente de Estrategia",
+          photoUrl: "./images/emilio.png",
+        },
+        {
+          id: "3",
+          name: "Ana María Pérez Bustamante",
+          role: "Vicepresidente Administrativa",
+          photoUrl: "./images/anamaria.png",
+        },
+        {
+          id: "4",
+          name: "Juliet Natalia Flórez",
+          role: "Vicepresidente de Operaciones",
+          photoUrl: "./images/juliet.png",
+        },
+        {
+          id: "5",
+          name: "Dora Luz Mejía",
+          role: "Vicepresidente de Servicios Corporativos",
+          photoUrl: "./images/dora.png",
+        },
+        {
+          id: "6",
+          name: "Isabel Cristina Mejía",
+          role: "Vicepresidente Comercial",
+          photoUrl: "./images/isabel.png",
+        },
+        {
+          id: "7",
+          name: "Ricardo Villegas",
+          role: "Consultor permanente",
+          photoUrl: "./images/ricardo.png",
+        },
+      ]}
+    />
       </div>
     </>
   );
