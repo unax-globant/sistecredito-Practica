@@ -1,0 +1,121 @@
+.team-section {
+  padding: 60px 16px;
+  background-color: white;
+}
+
+.team-header-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 16px;
+}
+
+.team-title {
+  font-size: 28px;
+  font-weight: bold;
+  color: #111;
+  line-height: 1.3;
+}
+
+.team-highlight {
+  color: #000;
+  display: block;
+  margin-top: 4px;
+}
+
+.team-subtitle {
+  font-size: 16px;
+  color: #444;
+}
+
+.highlight-green {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.team-card {
+  text-align: left;
+}
+
+.team-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: -18px;   
+}
+
+
+.team-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #111;
+  margin-bottom: -18px;
+}
+
+.team-role {
+  color: #666;
+  font-size: 14px;
+}
+
+.team-grid {
+  display: grid;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+    column-gap: 40px;
+    row-gap: 48px;
+  }
+
+  .team-header-block {
+    grid-column: span 1;
+    padding-top: 8px;
+    gap: 24px;
+  }
+
+  .team-title {
+    font-size: 36px;
+    line-height: 1.2;
+    margin-bottom: -14px;
+  }
+
+  .team-subtitle {
+    font-size: 18px;
+  }
+
+  .team-card {
+    grid-column: span 1;
+  }
+}
+
+.swiper-custom-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  background-color: #e5e5e5;
+  color: #333;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: #ccc;
+}
