@@ -25,21 +25,18 @@ interface TeamProps {
 }
 
 const Team: React.FC<TeamProps> = ({ members, text }) => {
-  const Header = () => (
-    <div className="team-header-block">
-      <p className="team-lead">{text.titulo}</p>
-      <h2 className="team-title">
-        <strong>{text.highlight}</strong>
-      </h2>
-      <p className="team-subtitle">{text.subtitle}</p>
-      <p className="team-highlight-green">{text.subtitleHighlight}</p>
-    </div>
-  );
-
   return (
     <section className="team-section">
       <div className="team-grid">
-        <Header />
+        <div className="team-card team-header-block">
+          <p className="team-lead">{text.titulo}</p>
+          <h2 className="team-title">
+            <strong>{text.highlight}</strong>
+          </h2>
+          <p className="team-subtitle">{text.subtitle}</p>
+          <p className="team-highlight-green">{text.subtitleHighlight}</p>
+        </div>
+
         {members.map((member) => (
           <div key={member.id} className="team-card">
             <img
@@ -54,14 +51,22 @@ const Team: React.FC<TeamProps> = ({ members, text }) => {
       </div>
 
       <div className="team-swiper-wrapper">
-        <Header />
+        <div className="team-header-block">
+          <p className="team-lead">{text.titulo}</p>
+          <h2 className="team-title">
+            <strong>{text.highlight}</strong>
+          </h2>
+          <p className="team-subtitle">{text.subtitle}</p>
+          <p className="team-highlight-green">{text.subtitleHighlight}</p>
+        </div>
+
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
           slidesPerView={1}
           navigation={{
-            nextEl: ".swiper-button-next-custom",
-            prevEl: ".swiper-button-prev-custom",
+            nextEl: ".swiper-button-prev-custom",
+            prevEl: ".swiper-button-next-custom",
           }}
           className="team-swiper"
         >
