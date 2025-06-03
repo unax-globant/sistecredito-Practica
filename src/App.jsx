@@ -87,10 +87,12 @@ function App() {
         />
 
         <Team
-          title="Así es"
-          highlight="nuestro equipo"
-          subtitle="Más de 800 personas con un propósito en común:"
-          subtitleHighlight="Hacerlo posible."
+          text={{
+            titulo: "Así es",
+            highlight: "nuestro equipo",
+            subtitle: "Más de 800 personas con un propósito en común:",
+            subtitleHighlight: "Hacerlo posible.",
+          }}
           members={[
             {
               id: "1",

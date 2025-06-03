@@ -12,25 +12,34 @@ export interface TeamMember {
   photoUrl: string;
 }
 
-interface TeamProps {
-  members: TeamMember[];
+interface TextoTitulo {
+  titulo: string;
+  highlight: string;
+  subtitle: string;
+  subtitleHighlight: string;
 }
 
-const Team: React.FC<TeamProps> = ({ members }) => {
+interface TeamProps {
+  members: TeamMember[];
+  text: TextoTitulo;
+}
+
+const Team: React.FC<TeamProps> = ({ members, text }) => {
+  const Header = () => (
+    <div className="team-header-block">
+      <p className="team-lead">{text.titulo}</p>
+      <h2 className="team-title">
+        <strong>{text.highlight}</strong>
+      </h2>
+      <p className="team-subtitle">{text.subtitle}</p>
+      <p className="team-highlight-green">{text.subtitleHighlight}</p>
+    </div>
+  );
+
   return (
     <section className="team-section">
       <div className="team-grid">
-        <div className="team-header-block">
-          <p className="team-lead">Así es</p>
-          <h2 className="team-title">
-            <strong>nuestro equipo</strong>
-          </h2>
-          <p className="team-subtitle">
-            Más de 800 personas con un <br /> propósito en común:
-          </p>
-          <p className="team-highlight-green">Hacerlo posible.</p>
-        </div>
-
+        <Header />
         {members.map((member) => (
           <div key={member.id} className="team-card">
             <img
@@ -45,17 +54,7 @@ const Team: React.FC<TeamProps> = ({ members }) => {
       </div>
 
       <div className="team-swiper-wrapper">
-        <div className="team-header-block">
-          <p className="team-lead">Así es</p>
-          <h2 className="team-title">
-            <strong>nuestro equipo</strong>
-          </h2>
-          <p className="team-subtitle">
-            Más de 800 personas con un <br /> propósito en común:
-          </p>
-          <p className="team-highlight-green">Hacerlo posible.</p>
-        </div>
-
+        <Header />
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
