@@ -14,31 +14,21 @@ export interface TeamMember {
 
 interface TeamProps {
   members: TeamMember[];
-  title: string;
-  highlight: string;
-  subtitle: string;
-  subtitleHighlight: string;
 }
 
-const Team: React.FC<TeamProps> = ({
-  members,
-  title,
-  highlight,
-  subtitle,
-  subtitleHighlight,
-}) => {
+const Team: React.FC<TeamProps> = ({ members }) => {
   return (
     <section className="team-section">
       <div className="team-grid">
         <div className="team-header-block">
+          <p className="team-lead">Así es</p>
           <h2 className="team-title">
-            {title} <br />
-            <span className="team-highlight">{highlight}</span>
+            <strong>nuestro equipo</strong>
           </h2>
           <p className="team-subtitle">
-            {subtitle}{" "}
-            <span className="highlight-green">{subtitleHighlight}</span>
+            Más de 800 personas con un <br /> propósito en común:
           </p>
+          <p className="team-highlight-green">Hacerlo posible.</p>
         </div>
 
         {members.map((member) => (
@@ -54,12 +44,25 @@ const Team: React.FC<TeamProps> = ({
         ))}
       </div>
 
-      {/* Swiper solo visible en móvil gracias a CSS */}
       <div className="team-swiper-wrapper">
+        <div className="team-header-block">
+          <p className="team-lead">Así es</p>
+          <h2 className="team-title">
+            <strong>nuestro equipo</strong>
+          </h2>
+          <p className="team-subtitle">
+            Más de 800 personas con un <br /> propósito en común:
+          </p>
+          <p className="team-highlight-green">Hacerlo posible.</p>
+        </div>
+
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
-          slidesPerView={1}
+          breakpoints={{
+            0: { slidesPerView: 1 },
+            640: { slidesPerView: 2 },
+          }}
           navigation={{
             nextEl: ".swiper-button-next-custom",
             prevEl: ".swiper-button-prev-custom",
