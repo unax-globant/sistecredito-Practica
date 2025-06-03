@@ -38,7 +38,6 @@ const Team: React.FC<TeamProps> = ({ members, text }) => {
 
   return (
     <section className="team-section">
-      {/* GRID DESKTOP */}
       <div className="team-grid">
         <Header />
         {members.map((member) => (
@@ -54,17 +53,12 @@ const Team: React.FC<TeamProps> = ({ members, text }) => {
         ))}
       </div>
 
-      {/* SWIPER MOBILE/TABLET */}
       <div className="team-swiper-wrapper">
         <Header />
         <Swiper
           modules={[Navigation]}
           spaceBetween={20}
-          breakpoints={{
-            0: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }, // opcional: para tablets más anchas
-          }}
+          slidesPerView={1}
           navigation={{
             nextEl: ".swiper-button-next-custom",
             prevEl: ".swiper-button-prev-custom",
