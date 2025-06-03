@@ -8,24 +8,28 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: 16px;
+  max-width: 360px;
 }
 
 .team-title {
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 400;
   color: #111;
   line-height: 1.3;
 }
 
 .team-highlight {
-  color: #000;
+  color: #111;
+  font-weight: 700;
   display: block;
   margin-top: 4px;
+  font-size: 32px;
 }
 
 .team-subtitle {
   font-size: 16px;
   color: #444;
+  font-weight: 400;
 }
 
 .highlight-green {
@@ -33,8 +37,18 @@
   font-weight: 600;
 }
 
+.team-grid {
+  display: grid;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  align-items: start;
+}
+
 .team-card {
   text-align: left;
+  max-width: 300px;
 }
 
 .team-image {
@@ -42,56 +56,26 @@
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 16px;
-  margin-bottom: -18px;   
+  margin-bottom: 12px;
 }
 
-
 .team-name {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
+  font-weight: 700;
   color: #111;
-  margin-bottom: -18px;
+  margin-bottom: 4px;
 }
 
 .team-role {
   color: #666;
   font-size: 14px;
+  font-weight: 400;
 }
 
-.team-grid {
-  display: grid;
-  gap: 32px;
-  max-width: 1200px;
+.team-swiper-wrapper {
+  display: none;
+  max-width: 400px;
   margin: 0 auto;
-}
-
-@media (min-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(4, 1fr);
-    align-items: start;
-    column-gap: 40px;
-    row-gap: 48px;
-  }
-
-  .team-header-block {
-    grid-column: span 1;
-    padding-top: 8px;
-    gap: 24px;
-  }
-
-  .team-title {
-    font-size: 36px;
-    line-height: 1.2;
-    margin-bottom: -14px;
-  }
-
-  .team-subtitle {
-    font-size: 18px;
-  }
-
-  .team-card {
-    grid-column: span 1;
-  }
 }
 
 .swiper-custom-buttons {
@@ -118,4 +102,62 @@
 .swiper-button-prev-custom:hover,
 .swiper-button-next-custom:hover {
   background-color: #ccc;
+}
+
+@media (max-width: 1023px) {
+  .team-grid {
+    display: none;
+  }
+
+  .team-swiper-wrapper {
+    display: block;
+  }
+
+  .team-header-block {
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .team-title,
+  .team-highlight {
+    font-size: 28px;
+  }
+
+  .team-subtitle {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 40px;
+    row-gap: 48px;
+  }
+
+  .team-header-block {
+    grid-column: span 1;
+    padding-top: 8px;
+    gap: 24px;
+    text-align: left;
+  }
+
+  .team-title {
+    font-size: 36px;
+    font-weight: 400;
+  }
+
+  .team-highlight {
+    font-size: 36px;
+    font-weight: 700;
+  }
+
+  .team-subtitle {
+    font-size: 18px;
+  }
+
+  .team-swiper-wrapper {
+    display: none;
+  }
 }
