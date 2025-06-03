@@ -1,0 +1,53 @@
+.value-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .value-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+  }
+  
+  .value-text {
+    flex: 1;
+  }
+  
+  .value-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0;
+    color: #222;
+  }
+  
+  .value-title strong {
+    font-weight: 700;
+    color: #222;
+  }
+  
+  .value-description {
+    margin-top: 0.3rem;
+    color: #444;
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .value-item {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+  
+    .value-icon {
+      margin-bottom: 0.5rem;
+    }
+  
+    .value-text {
+      align-items: center;
+    }
+  }
+  
