@@ -109,8 +109,7 @@
   background-color: #ccc;
 }
 
-/* Mobile & tablet */
-@media (max-width: 1023px) {
+@media (max-width: 1279px) {
   .team-grid {
     display: none;
   }
@@ -152,12 +151,7 @@
   }
 }
 
-/* Desktop */
-@media (min-width: 1024px) {
-  .team-swiper-wrapper {
-    display: none;
-  }
-
+@media (min-width: 1280px) {
   .team-grid {
     grid-template-columns: 360px repeat(3, 1fr);
     column-gap: 48px;
@@ -181,5 +175,9 @@
 
   .team-highlight-green {
     font-size: 18px;
+  }
+
+  .team-swiper-wrapper {
+    display: none;
   }
 }
