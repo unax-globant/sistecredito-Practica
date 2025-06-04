@@ -1,4 +1,5 @@
 import React from "react";
+import "./valueCard.css";
 
 interface ValueCardProps {
   icon: string;
@@ -14,10 +15,13 @@ const ValueCard: React.FC<ValueCardProps> = ({
   description,
 }) => (
   <div className="value-item">
-    <img src={icon} alt={title} />
-    <h3>{title}</h3>
-    <strong>{highlight}</strong>
-    <p>{description}</p>
+    <img src={icon} alt={title} className="value-icon" />
+    <div className="value-text">
+      <p className="value-title">
+        {title} <strong>{highlight}</strong>
+      </p>
+      <p className="value-description">{description}</p>
+    </div>
   </div>
 );
 
