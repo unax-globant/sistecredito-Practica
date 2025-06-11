@@ -1,0 +1,85 @@
+.sueno-section {
+    background-color: #f8f9fb;
+    padding: 4rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .sueno-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .sueno-header h2 {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  
+  .sueno-subtitle {
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  
+  .sueno-bloque {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .sueno-bloque.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .sueno-image {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 12px;
+    flex-shrink: 0;
+  }
+  
+  .sueno-text {
+    max-width: 500px;
+    color: #333;
+  }
+  
+  .sueno-text h3 {
+    font-size: 1.2rem;
+    font-weight: normal;
+  }
+  
+  .sueno-text p {
+    margin-top: 1rem;
+    line-height: 1.6;
+  }
+  
+  .sueno-highlight-green {
+    color: #00b140;
+    font-weight: bold;
+  }
+  
+  .sueno-bold-text {
+    font-weight: bold;
+  }
+  
+
+  @media (max-width: 768px) {
+    .sueno-bloque,
+    .sueno-bloque.reverse {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .sueno-text {
+      max-width: 100%;
+    }
+  
+    .sueno-header h2 {
+      font-size: 1.5rem;
+    }
+  }
+  

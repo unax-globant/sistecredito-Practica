@@ -19,6 +19,9 @@ import julietImg from './images/juliet.png';
 import doraImg from './images/dora.png';
 import isabelImg from './images/isabel.png';
 import ricardoImg from './images/ricardo.png';
+import Sueño from "./components/Sueño";
+import ninosImg from "./images/ninos.jpg";
+import ciclistasImg from "./images/ciclistas.jpg";
 
 import './App.css';
 
@@ -138,6 +141,37 @@ function App() {
             },
           ]}
         />
+
+<Sueño
+      text={{
+        titulo: "Nuestro compromiso:",
+        highlight: "cumplir sueños",
+        subtitle:
+          "También trabajamos por la primera infancia y las promesas del deporte en Colombia.",
+      }}
+      bloques={[
+        {
+          id: "1",
+          imageUrl: ninosImg,
+          heading: "Una casualidad que se traduce en",
+          highlight: "cientos de sonrisas.",
+          description:
+            "Nos encontramos por casualidad con la Fundación Carla Cristina cuando quisieron ser nuestros clientes para vender a crédito...",
+        },
+        {
+          id: "2",
+          imageUrl: ciclistasImg,
+          heading: "conectar a las personas con sus sueños.",
+          highlight:
+            "El ciclismo llegó a la familia Sistecrédito desde el 2019",
+          description:
+            "cuando vimos coincidir los valores y la filosofía de un grupo de deportistas con los nuestros...",
+          boldText:
+            "El ciclismo llegó a la familia Sistecrédito desde el 2019",
+          reverse: true,
+        },
+      ]}
+    />
       </div>
     </>
   );
