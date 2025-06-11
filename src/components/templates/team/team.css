@@ -87,13 +87,13 @@
 
 .swiper-button-prev-custom,
 .swiper-button-next-custom {
-  background-color: #e5e5e5;
+  background-color: #e5e5e500;
   color: #333;
   border: none;
   border-radius: 50%;
-  width: 32px;
+  width: 2px;
   height: 32px;
-  font-size: 18px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s ease;
