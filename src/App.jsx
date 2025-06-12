@@ -21,7 +21,7 @@ import isabelImg from './images/isabel.png';
 import ricardoImg from './images/ricardo.png';
 import Sueño from "./components/templates/sueño/sueño.tsx";
 import ninosImg from "./images/ninos.jpg";
-import ciclistasImg from "./images/ciclistas.jpg";
+import ciclistasImg from "./images/ciclistas.png";
 
 import './App.css';
 
