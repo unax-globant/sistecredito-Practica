@@ -27,7 +27,8 @@ const Sueño: React.FC<SueñoProps> = ({ text, bloques }) => {
     <section className="sueno-section">
       <div className="sueno-header">
         <h2>
-          {text.titulo} <strong>{text.highlight}</strong>
+          {text.titulo} <br></br>
+          <strong>{text.highlight}</strong>
         </h2>
         <p className="sueno-subtitle">{text.subtitle}</p>
       </div>
